@@ -1,4 +1,4 @@
-package com.leetcode.top100liked.lc_0198_rotate_array;
+package com.leetcode.top100liked.lc_0189_rotate_array;
 
 public class Solution {
 
