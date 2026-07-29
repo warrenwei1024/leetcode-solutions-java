@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0064_minimum_path_sum;
 
+/**
+ * LeetCode 64. 最小路径和
+ * <p>
+ * 给定一个包含非负整数的 m x n 网格 grid，请找出一条从左上角到右下角的路径，
+ * 使得路径上的数字总和为最小。每次只能向下或者向右移动一步。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public int minPathSum(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -31,3 +41,10 @@ public class Solution {
         return grid[rows - 1][cols - 1];
     }
 }
+
+// 核心思路
+// 动态规划：原地修改 grid，dp[i][j] = grid[i][j] + min(dp[i-1][j], dp[i][j-1])。
+// 先初始化第一行和第一列的边界值（只能单向移动），然后递推填充剩余格子。
+//
+// 时间复杂度: O(m * n)
+// 空间复杂度: O(1) —— 原地修改
