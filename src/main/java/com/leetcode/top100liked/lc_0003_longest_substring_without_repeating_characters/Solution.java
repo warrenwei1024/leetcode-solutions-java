@@ -3,6 +3,15 @@ package com.leetcode.top100liked.lc_0003_longest_substring_without_repeating_cha
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LeetCode 3. 无重复字符的最长子串
+ * <p>
+ * 给定一个字符串 s ，请你找出其中不含有重复字符的最长子串的长度。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     /**
      * 找到字符串中无重复字符的最长子串的长度
@@ -57,6 +66,9 @@ public class Solution {
     }
 }
 
-
-
-
+// 核心思路
+// 滑动窗口：右指针不断右移扩展窗口，若遇到重复字符则左指针跳到重复字符
+// 的下一个位置。用哈希表记录每个字符最新出现的位置，实时更新最大窗口长度。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(min(n, 128)) —— 字符集大小
