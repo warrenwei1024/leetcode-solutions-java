@@ -4,27 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2026/07/07
- * @LeetCode: 0054 螺旋矩阵 (Spiral Matrix)
- * @Link: https://leetcode.com/problems/spiral-matrix/
- * @Description:
- *
- * 给定一个 m x n 的矩阵，按照顺时针螺旋顺序返回矩阵中的所有元素。
- *
- * 解题思路：
- * 1. 使用四个边界变量 top、bottom、left、right 来限定当前未遍历的矩阵区域；
- * 2. 按“从左到右 → 从上到下 → 从右到左 → 从下到上”的顺序遍历；
- * 3. 每遍历完一条边后，将对应的边界向中心收缩；
- * 4. 当边界交叉时，说明所有元素都已遍历完毕。
- *
- * 时间复杂度：O(m * n)，m 为矩阵行数，n 为矩阵列数
- * 空间复杂度：O(1)，不包括存储结果所需的额外空间
- *
- * @Version: 1.0
+ * LeetCode 54. 螺旋矩阵
+ * <p>
+ * 给你一个 m 行 n 列的矩阵 matrix，请按照顺时针螺旋顺序，
+ * 返回矩阵中的所有元素。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
-
 public class Solution {
 
     public List<Integer> spiralOrder(int[][] matrix) {
@@ -79,3 +67,10 @@ public class Solution {
         return result;
     }
 }
+
+// 核心思路
+// 维护上下左右四个边界，按"右→下→左→上"的顺序逐层遍历。
+// 每遍历完一条边收缩对应边界，并检查边界是否交叉防止重复遍历。
+//
+// 时间复杂度: O(m * n)
+// 空间复杂度: O(1) —— 不计结果列表
