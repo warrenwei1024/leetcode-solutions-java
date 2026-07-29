@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0041_first_missing_positive;
 
+/**
+ * LeetCode 41. 缺失的第一个正数
+ * <p>
+ * 给你一个未排序的整数数组 nums，请你找出其中没有出现的最小的正整数。
+ * 你必须实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public int firstMissingPositive(int[] nums){
 
@@ -24,12 +34,18 @@ public class Solution {
 
         // 3. 如果所有数字都各就各位了（例如数组是 [1, 2, 3]），那么答案就是 n + 1
         return n + 1;
-
     }
 
-    private void swap(int[] nums, int i, int j){
+    private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
 }
+
+// 核心思路
+// 原地哈希：将每个在 [1, n] 范围内的数 x 放到索引 x-1 的位置上。
+// 遍历调整后的数组，第一个 nums[i] != i+1 的位置即答案；否则答案为 n+1。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
