@@ -20,6 +20,15 @@ class TreeNode {
     }
 }
 
+/**
+ * LeetCode 226. 翻转二叉树
+ * <p>
+ * 给你一棵二叉树的根节点 root，翻转这棵二叉树，并返回其根节点。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public TreeNode invertTree(TreeNode root) {
         if (root == null) {
@@ -41,3 +50,10 @@ public class Solution {
 
     }
 }
+
+// 核心思路
+// 递归：交换当前节点的左右子树，然后递归翻转左右子树。
+// 先序遍历和后序遍历均可，关键是交换 + 递归的顺序。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(h) —— 递归栈深度
