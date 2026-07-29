@@ -23,6 +23,15 @@ class TreeNode {
     }
 }
 
+/**
+ * LeetCode 94. 二叉树的中序遍历
+ * <p>
+ * 给定一个二叉树的根节点 root，返回它的中序遍历。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> result = new ArrayList<>();
@@ -42,3 +51,9 @@ public class Solution {
         traverse(node.right, result);
     }
 }
+
+// 核心思路
+// 中序遍历：左 → 根 → 右。递归实现，先递归左子树，再访问当前节点，最后递归右子树。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(h) —— h 为树高，递归栈深度
