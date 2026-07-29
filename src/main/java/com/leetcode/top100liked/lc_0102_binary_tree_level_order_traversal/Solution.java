@@ -27,7 +27,18 @@ class TreeNode {
 }
 
 
-class Solution {
+/**
+ * LeetCode 102. 二叉树的层序遍历
+ * <p>
+ * 给你二叉树的根节点 root，返回其节点值的层序遍历。（即逐层地，从左到右访问所有节点）。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
+
+
+public class Solution {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
 
@@ -70,3 +81,10 @@ class Solution {
         return result;
     }
 }
+
+// 核心思路
+// BFS + 队列：使用队列进行广度优先搜索，每次处理一层。
+// 关键是在每层开始时记录当前队列大小 levelSize，恰好等于该层节点数。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(n)
