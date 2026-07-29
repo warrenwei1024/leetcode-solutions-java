@@ -3,14 +3,18 @@ package com.leetcode.top100liked.lc_0076_minimum_window_substring;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LeetCode 76. 最小覆盖子串
+ * <p>
+ * 给你一个字符串 s、一个字符串 t。返回 s 中涵盖 t 所有字符的最小子串。
+ * 如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 ""。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
-    /**
-     * LeetCode 76. 最小覆盖子串
-     *
-     * @param s 原始字符串
-     * @param t 目标字符串
-     * @return 最小覆盖子串
-     */
+
     public String minWindow(String s, String t) {
         // 1. 存储 t 中字符及其需求的数量
         Map<Character, Integer> targetMap = new HashMap<>();
@@ -81,3 +85,10 @@ public class Solution {
         return minLen == Integer.MAX_VALUE ? "" : s.substring(start, start + minLen);
     }
 }
+
+// 核心思路
+// 滑动窗口 + 哈希表：右指针扩展窗口直到覆盖 t 所有字符（valid == targetCount），
+// 然后左指针收缩窗口寻找最小覆盖。用两个哈希表分别记录需求和窗口内字符数。
+//
+// 时间复杂度: O(m + n)
+// 空间复杂度: O(1) —— 字符集大小恒定
