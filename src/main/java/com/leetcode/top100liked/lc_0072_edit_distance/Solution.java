@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0072_edit_distance;
 
+/**
+ * LeetCode 72. 编辑距离
+ * <p>
+ * 给你两个单词 word1 和 word2，请返回将 word1 转换成 word2 所使用的最少操作数。
+ * 你可以对一个单词进行插入一个字符、删除一个字符、替换一个字符三种操作。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
 
     public int minDistance(String word1, String word2) {
@@ -42,3 +52,10 @@ public class Solution {
         return dp[m][n];
     }
 }
+
+// 核心思路
+// 动态规划：dp[i][j] 表示 word1[0..i) 转换为 word2[0..j) 的最少操作数。
+// 字符相同时继承 dp[i-1][j-1]；不同时取删除、插入、替换三者最小值 + 1。
+//
+// 时间复杂度: O(m * n)
+// 空间复杂度: O(m * n)
