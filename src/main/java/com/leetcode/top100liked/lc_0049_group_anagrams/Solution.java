@@ -6,28 +6,15 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2025/10/21
- * @LeetCode: 49 字母异位词分组 (Group Anagrams)
- * @Link: https://leetcode.com/problems/group-anagrams/
- * @Description:
- * 给定一个字符串数组 strs，将其中字母异位词分组返回。
- * 字母异位词指由相同字母重新排列组成的单词，例如 "eat" 与 "tea"。
- *
- * 解题思路：
- * 1. 使用 HashMap，将排序后的字符串作为 key；
- * 2. 遍历每个字符串，将其按字母排序后的结果作为 key 存入 HashMap；
- * 3. 将原字符串加入对应 key 的列表中；
- * 4. 遍历结束后，将 HashMap 中的所有列表作为结果返回。
- *
- * 时间复杂度：O(n * k log k)，n 为字符串数量，k 为字符串平均长度
- * 空间复杂度：O(n * k)
- *
- *
- * @Version: 1.0
+ * LeetCode 49. 字母异位词分组
+ * <p>
+ * 给你一个字符串数组，请你将字母异位词组合在一起。可以按任意顺序返回结果列表。
+ * 字母异位词是由重新排列源单词的所有字母得到的一个新单词。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
-
 public class Solution {
 
     public List<List<String>> groupAnagrams(String[] strs){
@@ -60,4 +47,11 @@ public class Solution {
         return new ArrayList<>(map.values());
     }
 }
+
+// 核心思路
+// 哈希表分组：将每个字符串按字母排序后作为 key，同一 key 的字符串即为
+// 字母异位词。使用 putIfAbsent 简化 key 不存在时的初始化逻辑。
+//
+// 时间复杂度: O(n * k log k)
+// 空间复杂度: O(n * k)
 
