@@ -1,16 +1,14 @@
 package com.leetcode.top100liked.lc_0042_trapping_rain_water;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2025/11/3
- * @LeetCode: Hard 0043 接雨水 (Trapping Rain Water)
- * @Link: https://leetcode.com/problems/trapping-rain-water/
- * @Description:
- *
- * 时间复杂度：
- * 空间复杂度：
- * @Version: 1.0
+ * LeetCode 42. 接雨水
+ * <p>
+ * 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，
+ * 下雨之后能接多少雨水。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
 public class Solution {
     /**
@@ -51,4 +49,11 @@ public class Solution {
         return water;
     }
 }
+
+// 核心思路
+// 双指针从两端向中间移动，维护左右两边的最大高度 leftMax 和 rightMax。
+// 对于每个位置，水量由较矮的一侧决定：min(leftMax, rightMax) - height[i]。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
 
