@@ -1,6 +1,17 @@
 package com.leetcode.top100liked.lc_0234_palindrome_linked_list;
 
-//  Definition for singly-linked list.
+/**
+ * LeetCode 234. 回文链表
+ * <p>
+ * 给你一个单链表的头节点 head，请你判断该链表是否为回文链表。
+ * 如果是，返回 true；否则，返回 false。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
+
+// Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
@@ -19,7 +30,7 @@ class ListNode {
 }
 
 
-class Solution {
+public class Solution {
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true; // 空链表或只有一个节点，是回文
@@ -60,3 +71,10 @@ class Solution {
         return prev;
     }
 }
+
+// 核心思路
+// 快慢指针找中点，反转后半部分链表，然后双指针比较前后两部分。
+// 回文链表的正序和逆序相同，反转后半部分后逐一比较即可。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
