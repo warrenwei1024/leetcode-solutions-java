@@ -1,16 +1,14 @@
 package com.leetcode.top100liked.lc_0011_container_with_most_water;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2025/11/3
- * @LeetCode: Easy 0011 盛最多水的容器 (Container With Most Water)
- * @Link: https://leetcode.com/problems/container-with-most-water/
- * @Description:
- *
- * 时间复杂度：
- * 空间复杂度：
- * @Version: 1.0
+ * LeetCode 11. 盛最多水的容器
+ * <p>
+ * 给定一个长度为 n 的整数数组 height，有 n 条垂线，找出其中的两条线，
+ * 使得它们与 x 轴共同构成的容器可以容纳最多的水。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
 public class Solution {
     /**
@@ -72,3 +70,10 @@ public class Solution {
         System.out.println("输出: " + solution.maxArea(height3)); // 期望输出: 16
     }
 }
+
+// 核心思路
+// 双指针从两端向中间收缩，每次移动较短的边。
+// 因为面积由较短边决定，移动短边才有可能在宽度减小的同时获得更大的高度。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
