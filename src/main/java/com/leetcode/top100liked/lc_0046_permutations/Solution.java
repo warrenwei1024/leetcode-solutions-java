@@ -3,6 +3,16 @@ package com.leetcode.top100liked.lc_0046_permutations;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * LeetCode 46. 全排列
+ * <p>
+ * 给定一个不含重复数字的数组 nums，返回其所有可能的全排列。
+ * 你可以按任意顺序返回答案。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
@@ -40,3 +50,10 @@ public class Solution {
         }
     }
 }
+
+// 核心思路
+// 回溯算法：通过递归遍历决策树，used 数组记录已选元素避免重复。
+// 到达叶子节点（路径长度 == 数组长度）时将当前路径加入结果集。
+//
+// 时间复杂度: O(n * n!)
+// 空间复杂度: O(n) —— 递归栈深度
