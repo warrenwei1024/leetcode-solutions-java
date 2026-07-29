@@ -1,15 +1,14 @@
 package com.leetcode.top100liked.lc_0283_move_zeores;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2025/11/3
- * @LeetCode: Easy 0283 移动零 (Move Zeros)
- * @Link: https://leetcode.com/problems//
- * @Description:
- * 时间复杂度：
- * 空间复杂度：
- * @Version: 1.0
+ * LeetCode 283. 移动零
+ * <p>
+ * 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，
+ * 同时保持非零元素的相对顺序。必须在不复制数组的情况下原地操作。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
 
 public class Solution {
@@ -69,3 +68,10 @@ public class Solution {
         System.out.println("移动后: " + java.util.Arrays.toString(nums3)); // 期望: [1, 2, 3, 4, 0, 0, 0]
     }
 }
+
+// 核心思路
+// 双指针（快慢指针）：fast 遍历数组，slow 指向下一个非零元素应放置的位置。
+// 遇到非零元素时与 slow 位置交换，两个指针都前进；遇到零时仅 fast 前进。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
