@@ -1,5 +1,16 @@
 package com.leetcode.top100liked.lc_0148_sort_list;
 
+/**
+ * LeetCode 148. 排序链表
+ * <p>
+ * 给你链表的头结点 head，请将其按升序排列并返回排序后的链表。
+ * 要求 O(n log n) 时间复杂度和 O(1) 空间复杂度。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
+
 
 class ListNode {
     int val;
@@ -74,6 +85,13 @@ public class Solution {
         return dummy.next;
     }
 }
+
+// 核心思路
+// 归并排序（自顶向下递归）：快慢指针找中点断链，递归排序左右两部分，
+// 然后合并两个有序链表。也可用自底向上迭代实现 O(1) 空间。
+//
+// 时间复杂度: O(n log n)
+// 空间复杂度: O(log n) —— 递归栈深度
 
 // ======================== 方法二：自底向上迭代归并 (O(1)空间) ========================
 // public class Solution {
