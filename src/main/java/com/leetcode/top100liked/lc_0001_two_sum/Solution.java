@@ -3,22 +3,16 @@ package com.leetcode.top100liked.lc_0001_two_sum;
 import java.util.HashMap;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2025/10/21
- * @LeetCode: 0001 两数之和 (Two sum)
- * @Link: https://leetcode.com/problems/two-sum/
- * @Description:
- *
- * 使用哈希表实现 O(n) 解法。
- * 每次遍历时判断 (target - nums[i]) 是否已存在于哈希表中。
- *
- * 时间复杂度：O(n)
- * 空间复杂度：O(n)
- *
- * @Version: 1.0
+ * LeetCode 1. 两数之和
+ * <p>
+ * 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出和为目标值
+ * target 的那两个整数，并返回它们的数组下标。你可以假设每种输入只会对应一个答案，
+ * 并且你不能使用两次相同的元素。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
-
 public class Solution {
 
     public int[] twoSum(int[] nums, int target) {
@@ -49,4 +43,11 @@ public class Solution {
         return new int[]{};
     }
 }
+
+// 核心思路
+// 利用哈希表存储已遍历元素的值和下标。对于当前元素 nums[i]，
+// 若 target - nums[i] 已存在于哈希表中，则找到答案。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(n)
 
