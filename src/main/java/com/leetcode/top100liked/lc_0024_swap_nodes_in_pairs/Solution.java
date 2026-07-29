@@ -1,7 +1,17 @@
 package com.leetcode.top100liked.lc_0024_swap_nodes_in_pairs;
 
+/**
+ * LeetCode 24. 两两交换链表中的节点
+ * <p>
+ * 给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。
+ * 你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 
-//  Definition for singly-linked list.
+// Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
@@ -20,7 +30,7 @@ class ListNode {
 }
 
 
-class Solution {
+public class Solution {
     public ListNode swapPairs(ListNode head) {
         // 1. 创建虚拟头结点，简化边界处理
         ListNode dummy = new ListNode(0);
@@ -52,3 +62,10 @@ class Solution {
         return dummy.next;
     }
 }
+
+// 核心思路
+// 使用虚拟头节点简化边界处理，每次交换两个相邻节点：
+// prev -> node1 -> node2 -> next 变为 prev -> node2 -> node1 -> next。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
