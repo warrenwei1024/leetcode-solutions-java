@@ -20,6 +20,15 @@ class TreeNode {
     }
 }
 
+/**
+ * LeetCode 101. 对称二叉树
+ * <p>
+ * 给你一个二叉树的根节点 root，检查它是否轴对称。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {
@@ -45,3 +54,10 @@ public class Solution {
         return check(p.left, q.right) && check(p.right, q.left);
     }
 }
+
+// 核心思路
+// 递归比较两棵子树是否互为镜像：两个根节点值相等，且 p.left 与 q.right
+// 互为镜像、p.right 与 q.left 互为镜像。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(h) —— 递归栈深度
