@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0073_set_matrix_zeroes;
 
+/**
+ * LeetCode 73. 矩阵置零
+ * <p>
+ * 给定一个 m x n 的矩阵，如果一个元素为 0，则将其所在行和列的所有元素都设为 0。
+ * 请使用原地算法。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     public void setZeroes(int[][] matrix) {
         if (matrix == null || matrix.length == 0) return;
@@ -63,3 +73,11 @@ public class Solution {
         }
     }
 }
+
+// 核心思路
+// 使用第一行和第一列作为标记数组，避免 O(mn) 额外空间。
+// 先用两个布尔值记录第一行/第一列本身是否有 0，然后遍历内部元素做标记，
+// 根据标记置零内部元素，最后处理第一行和第一列。
+//
+// 时间复杂度: O(m * n)
+// 空间复杂度: O(1)
