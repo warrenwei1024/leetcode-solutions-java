@@ -3,6 +3,16 @@ package com.leetcode.top100liked.lc_0146_lru_cache;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * LeetCode 146. LRU 缓存
+ * <p>
+ * 请你设计并实现一个满足 LRU (最近最少使用) 缓存约束的数据结构。
+ * 实现 LRUCache 类：get(key) 和 put(key, value) 均以 O(1) 时间复杂度运行。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class LRUCache {
 
     // 定义双向链表节点
@@ -111,3 +121,10 @@ public class LRUCache {
         return res;
     }
 }
+
+// 核心思路
+// 哈希表 + 双向链表：哈希表实现 O(1) 查找，双向链表维护访问顺序。
+// 最近使用的节点放在链表头部，最久未使用的在尾部，超出容量时淘汰尾部。
+//
+// 时间复杂度: O(1) —— get 和 put 均为 O(1)
+// 空间复杂度: O(capacity)
