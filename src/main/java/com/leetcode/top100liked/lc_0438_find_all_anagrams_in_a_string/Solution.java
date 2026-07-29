@@ -1,5 +1,17 @@
+package com.leetcode.top100liked.lc_0438_find_all_anagrams_in_a_string;
+
 import java.util.*;
 
+/**
+ * LeetCode 438. 找到字符串中所有字母异位词
+ * <p>
+ * 给定两个字符串 s 和 p，找到 s 中所有 p 的异位词的子串，
+ * 返回这些子串的起始索引。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     /**
      * 找到字符串 s 中所有是字符串 p 的字母异位词的子串的起始索引。
@@ -62,3 +74,10 @@ public class Solution {
         System.out.println(solution.findAnagrams("", "a"));             // 输出: []
     }
 }
+
+// 核心思路
+// 滑动窗口 + 频次数组：维护一个大小为 p.length() 的固定窗口，
+// 用长度为 26 的数组记录窗口内各字符频次，与 p 的频次数组比较判断异位词。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1) —— 固定 26 大小
