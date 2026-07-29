@@ -3,8 +3,16 @@ package com.leetcode.top100liked.lc_0128_longest_consecutive_sequence;
 import java.util.HashSet;
 import java.util.Set;
 
-import java.util.*;
-
+/**
+ * LeetCode 128. 最长连续序列
+ * <p>
+ * 给定一个未排序的整数数组 nums，找出数字连续的最长序列的长度。
+ * 请你设计并实现时间复杂度为 O(n) 的算法解决此问题。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     /**
      * 找到数组中最长连续序列的长度
@@ -72,6 +80,13 @@ public class Solution {
         System.out.println("输出: " + solution.longestConsecutive(nums4));
     }
 }
+
+// 核心思路
+// 将所有数字存入 HashSet，然后遍历集合。仅当 num-1 不存在时（即 num 是
+// 连续序列的起点），才向后查找 num+1, num+2, ... 计算长度。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(n)
 
 
 
