@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0200_number_of_islands;
 
+/**
+ * LeetCode 200. 岛屿数量
+ * <p>
+ * 给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。
+ * 岛屿总是被水包围，并且每座岛屿只能由水平方向/竖直方向上相邻的陆地连接形成。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
 
     public int numIslands(char[][] grid) {
@@ -48,3 +58,10 @@ public class Solution {
         dfs(grid, r, c + 1); // 右
     }
 }
+
+// 核心思路
+// DFS 洪水填充：遍历网格，每遇到一块陆地 '1'，计数加一，
+// 然后 DFS 将该岛屿的所有陆地淹没为 '0'，避免重复计数。
+//
+// 时间复杂度: O(m * n)
+// 空间复杂度: O(m * n) —— 最坏情况递归栈深度
