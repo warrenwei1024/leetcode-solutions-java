@@ -4,6 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * LeetCode 56. 合并区间
+ * <p>
+ * 以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi]。
+ * 请你合并所有重叠的区间，并返回一个不重叠的区间数组。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
 
     public int[][] merge(int[][] intervals) {
@@ -35,3 +45,10 @@ public class Solution {
         return merged.toArray(new int[merged.size()][]);
     }
 }
+
+// 核心思路
+// 先按区间左端点排序，然后遍历合并：若当前区间与结果集最后一个区间重叠
+// （左端点 <= 右端点），则更新右端点为两者最大值；否则直接加入。
+//
+// 时间复杂度: O(n log n)
+// 空间复杂度: O(n)
