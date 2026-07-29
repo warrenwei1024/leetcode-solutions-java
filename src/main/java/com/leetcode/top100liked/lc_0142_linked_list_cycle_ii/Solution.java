@@ -1,5 +1,16 @@
 package com.leetcode.top100liked.lc_0142_linked_list_cycle_ii;
 
+/**
+ * LeetCode 142. 环形链表 II
+ * <p>
+ * 给定一个链表的头节点 head，返回链表开始入环的第一个节点。
+ * 如果链表无环，则返回 null。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
+
 
 class ListNode {
     int val;
@@ -46,3 +57,10 @@ public class Solution {
         return null;  // 没有环，返回 null
     }
 }
+
+// 核心思路
+// 快慢指针两步走：先让快慢指针相遇判定有环；然后将一个指针移回 head，
+// 两指针同步每次走一步，再次相遇处即为环的入口。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
