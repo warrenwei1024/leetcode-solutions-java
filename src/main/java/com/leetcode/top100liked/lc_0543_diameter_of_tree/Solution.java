@@ -21,6 +21,16 @@ class TreeNode {
     }
 }
 
+/**
+ * LeetCode 543. 二叉树的直径
+ * <p>
+ * 给你一棵二叉树的根节点，返回该树的直径。
+ * 二叉树的直径是指树中任意两个节点之间最长路径的长度。这条路径可能经过也可能不经过根节点。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     // 全局变量，记录最大直径
     private int maxDiameter = 0;
@@ -57,3 +67,10 @@ public class Solution {
         return Math.max(leftDepth, rightDepth) + 1;
     }
 }
+
+// 核心思路
+// DFS 后序遍历：递归计算左右子树深度，同时更新全局最大直径。
+// 经过当前节点的路径长度 = 左深度 + 右深度，直径即所有节点该值的最大值。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(h) —— 递归栈深度
