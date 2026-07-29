@@ -5,18 +5,16 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * @FileName: Solution.java
- * @Author: Warren Wei
- * @Date: 2025/11/3
- * @LeetCode: Normal 0015 三数之后 (3sum)
- * @Link: https://leetcode.com/problems/3sum/
- * @Description:
- * 时间复杂度：
- * 空间复杂度：
- * @Version: 1.0
+ * LeetCode 15. 三数之和
+ * <p>
+ * 给你一个整数数组 nums，判断是否存在三元组 [nums[i], nums[j], nums[k]]
+ * 满足 i != j、i != k 且 j != k，同时还满足 nums[i] + nums[j] + nums[k] == 0。
+ * 请你返回所有和为 0 且不重复的三元组。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
  */
-import java.util.*;
-
 public class Solution {
     /**
      * 找出数组中所有和为 0 的不重复三元组。
@@ -114,3 +112,10 @@ public class Solution {
         // 期望输出: [[-2, 0, 2], [-2, 1, 1]]
     }
 }
+
+// 核心思路
+// 排序 + 双指针：先排序，固定第一个数 nums[i]，然后在剩余子数组中用
+// 双指针找两数之和等于 -nums[i]。注意跳过重复元素避免结果重复。
+//
+// 时间复杂度: O(n^2)
+// 空间复杂度: O(1) —— 不计结果列表
