@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0141_linked_list_cycle;
 
+/**
+ * LeetCode 141. 环形链表
+ * <p>
+ * 给你一个链表的头节点 head，判断链表中是否有环。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
+
 
 class ListNode {
     int val;
@@ -41,3 +51,10 @@ public class Solution {
         return false;
     }
 }
+
+// 核心思路
+// 快慢指针（Floyd 判圈算法）：慢指针每次走一步，快指针每次走两步。
+// 如果有环，快慢指针必然相遇；如果无环，快指针会先到达 null。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
