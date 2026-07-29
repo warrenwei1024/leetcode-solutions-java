@@ -4,6 +4,16 @@ import java.util.Arrays;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * LeetCode 239. 滑动窗口最大值
+ * <p>
+ * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到最右侧。
+ * 你只可以看到在滑动窗口内的 k 个数字，返回滑动窗口中的最大值。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
     /**
      * 给定一个整数数组 nums 和一个滑动窗口大小 k，
@@ -76,3 +86,10 @@ public class Solution {
         // 输出: [4]
     }
 }
+
+// 核心思路
+// 单调递减双端队列：队列存储下标，队首始终为当前窗口最大值的下标。
+// 每次新元素入队前，从队尾弹出所有小于它的元素以保持单调性。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(k)
