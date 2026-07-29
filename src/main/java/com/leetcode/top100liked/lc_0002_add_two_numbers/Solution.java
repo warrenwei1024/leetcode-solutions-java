@@ -1,5 +1,15 @@
 package com.leetcode.top100liked.lc_0002_add_two_numbers;
 
+/**
+ * LeetCode 2. 两数相加
+ * <p>
+ * 给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，
+ * 并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 
 class ListNode {
     int val;
@@ -55,3 +65,10 @@ public class Solution {
         return dummy.next;
     }
 }
+
+// 核心思路
+// 模拟加法运算，同时遍历两个链表，逐位相加并处理进位。
+// 使用虚拟头节点简化边界处理，最后若还有进位则追加一个节点。
+//
+// 时间复杂度: O(max(m, n))
+// 空间复杂度: O(1) —— 不计结果链表
