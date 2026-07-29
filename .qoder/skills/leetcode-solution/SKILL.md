@@ -91,6 +91,12 @@ git commit -m "leetcode {number} {中文标题} {difficulty}"
 
 Use the commit message format: `leetcode {4-digit} {中文标题} {difficulty}`, e.g. `leetcode 0074 搜索二维矩阵 normal`
 
+### Step 5: Git Push
+
+```bash
+git push origin master
+```
+
 ## Example
 
 **Input**: 题号 74，标题 搜索二维矩阵，top100liked，normal
