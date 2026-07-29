@@ -4,6 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
+/**
+ * LeetCode 347. 前 K 个高频元素
+ * <p>
+ * 给你一个整数数组 nums 和一个整数 k，请你返回其中出现频率前 k 高的元素。
+ * 你可以按任意顺序返回答案。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 public class Solution {
 
     public int[] topKFrequent(int[] nums, int k) {
@@ -40,3 +50,10 @@ public class Solution {
 
     }
 }
+
+// 核心思路
+// 哈希表统计频率 + 小顶堆维护 Top K：遍历哈希表将元素入堆，
+// 堆大小超过 k 时弹出频率最小的元素（堆顶）。
+//
+// 时间复杂度: O(n log k)
+// 空间复杂度: O(n)
