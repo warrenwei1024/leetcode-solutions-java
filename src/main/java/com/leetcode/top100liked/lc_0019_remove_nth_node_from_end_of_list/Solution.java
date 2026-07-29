@@ -1,7 +1,16 @@
 package com.leetcode.top100liked.lc_0019_remove_nth_node_from_end_of_list;
 
+/**
+ * LeetCode 19. 删除链表的倒数第 N 个结点
+ * <p>
+ * 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
 
-//  Definition for singly-linked list.
+// Definition for singly-linked list.
 class ListNode {
     int val;
     ListNode next;
@@ -53,3 +62,10 @@ public class Solution {
         return dummy.next;
     }
 }
+
+// 核心思路
+// 先遍历一遍计算链表长度 L，则倒数第 n 个节点即正数第 L-n 个节点。
+// 使用虚拟头节点简化删除头节点的边界情况，找到前驱后直接删除。
+//
+// 时间复杂度: O(n)
+// 空间复杂度: O(1)
