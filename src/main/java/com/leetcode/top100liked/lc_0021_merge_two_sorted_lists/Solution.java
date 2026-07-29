@@ -1,5 +1,16 @@
 package com.leetcode.top100liked.lc_0021_merge_two_sorted_lists;
 
+/**
+ * LeetCode 21. 合并两个有序链表
+ * <p>
+ * 将两个升序链表合并为一个新的升序链表并返回。
+ * 新链表是通过拼接给定的两个链表的所有节点组成的。
+ * <p>
+ * 
+ * @author weijunjie
+ * @date 2026-07-09
+ */
+
 class ListNode {
     int val;
     ListNode next;
@@ -51,3 +62,10 @@ public class Solution {
         return dummy.next;
     }
 }
+
+// 核心思路
+// 使用虚拟头节点，同时遍历两个链表，每次取较小值的节点接到结果链表尾部。
+// 最后将剩余链表直接拼接。
+//
+// 时间复杂度: O(m + n)
+// 空间复杂度: O(1)
